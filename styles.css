@@ -47,7 +47,8 @@ button.shadow-effect:hover, a.shadow-effect:hover, .service-card.shadow-effect:h
 /* ── SOBRE MÍ ── */
 .about-section { display: flex; align-items: center; gap: 60px; padding: 90px 10%; background: var(--crema); }
 .about-image-container { text-align: center; }
-.about-img { width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 8px solid var(--dorado-claro); } /* Borde claro */
+.about-img { width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 8px solid 
+#07735F; } /* Borde claro */
 .about-name { margin-top: 20px; font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--verde-oscuro); font-weight: bold; }
 .about-text { flex: 1; font-size: 17px; color: var(--texto-suave); }
 
@@ -94,7 +95,7 @@ button.shadow-effect:hover, a.shadow-effect:hover, .service-card.shadow-effect:h
 .btn-green-large { background: var(--verde-oscuro); color: var(--blanco); padding: 16px 45px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; text-align: center; }
 
 /* ── FOOTER ── */
-.footer-section { background: var(--negro); color: var(--blanco); padding: 60px 10%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; border-top: 4px solid var(--dorado-claro); }
+.footer-section { background: var(--negro); color: var(--blanco); padding: 60px 10%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; border-top: 4px solid #03A696; }
 .footer-logo-img { max-height: 120px; } /* Logo grande en el footer */
 .footer-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--dorado-claro); margin-bottom: 5px; }
 .footer-contact p { margin: 8px 0; font-size: 15px; color: #ccc; }
