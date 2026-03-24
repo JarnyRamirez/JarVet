@@ -3,12 +3,12 @@
 
 :root {
   --negro:        #0a0a0a;
-  --verde-oscuro: #1b3d2f; /* Verde corporativo JarVet */
-  --verde-claro:  #2f6b52; /* Verde para botones */
-  --crema:        #fdfbf7; /* Fondo general más cálido */
-  --crema-oscuro: #f2efe9; /* Fondo secundario */
+  --verde-oscuro: #1b3d2f; 
+  --verde-claro:  #2f6b52; 
+  --crema:        #fdfbf7; 
+  --crema-oscuro: #f2efe9; 
   --dorado:       #d4af37;
-  --dorado-claro: #eaddab; /* Borde más claro para la foto */
+  --dorado-claro: #eaddab; 
   --blanco:       #ffffff;
   --texto:        #2d2d2d;
   --texto-suave:  #5a5a5a;
@@ -29,12 +29,39 @@ button.shadow-effect:hover, a.shadow-effect:hover, .service-card.shadow-effect:h
   box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-/* ── NAVEGACIÓN ── */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: var(--negro); position: sticky; top: 0; z-index: 100; }
-.brand-logo { max-height: 85px; } /* Logo más grande */
-.nav-links { display: flex; gap: 25px; }
-.nav-link { color: var(--blanco); text-decoration: none; font-size: 15px; font-weight: 500; transition: color 0.3s; }
-.nav-link:hover { color: var(--dorado-claro); }
+/* ── NAVEGACIÓN (Centrada y Grande) ── */
+.navbar { display: flex; justify-content: center; align-items: center; padding: 20px 5%; background: var(--negro); position: sticky; top: 0; z-index: 100; }
+.brand-logo { max-height: 100px; } /* Logo más grande y centrado */
+/* ── SELECTOR DE IDIOMA ── */
+.lang-switch {
+  position: absolute;
+  right: 5%; /* Pega las letras a la derecha de la pantalla */
+  color: #888;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.lang-switch a {
+  color: var(--blanco);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.lang-switch a:hover {
+  color: var(--dorado-claro);
+}
+.lang-switch .active {
+  color: var(--dorado-claro); /* Resalta en dorado el idioma actual */
+  pointer-events: none;
+}
+
+/* Ajuste para que en celulares se vea bien arriba a la derecha */
+@media (max-width: 768px) {
+  .lang-switch {
+    top: 15px;
+    right: 15px;
+    font-size: 13px;
+  }
+}
 
 /* ── HERO SECTION ── */
 .hero-section { background: linear-gradient(rgba(27,61,47,0.7), rgba(10,10,10,0.8)), url('fotoportada.jpg') center/cover no-repeat; padding: 100px 5%; display: flex; align-items: center; min-height: 80vh; }
@@ -47,8 +74,8 @@ button.shadow-effect:hover, a.shadow-effect:hover, .service-card.shadow-effect:h
 /* ── SOBRE MÍ ── */
 .about-section { display: flex; align-items: center; gap: 60px; padding: 90px 10%; background: var(--crema); }
 .about-image-container { text-align: center; }
-.about-img { width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 8px solid 
-#07735F; } /* Borde claro */
+/* Mantuve tu color exacto #07735F */
+.about-img { width: 280px; height: 280px; object-fit: cover; border-radius: 50%; border: 8px solid #07735F; } 
 .about-name { margin-top: 20px; font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--verde-oscuro); font-weight: bold; }
 .about-text { flex: 1; font-size: 17px; color: var(--texto-suave); }
 
@@ -95,22 +122,25 @@ button.shadow-effect:hover, a.shadow-effect:hover, .service-card.shadow-effect:h
 .btn-green-large { background: var(--verde-oscuro); color: var(--blanco); padding: 16px 45px; border-radius: 30px; text-decoration: none; font-weight: bold; font-size: 18px; transition: 0.3s; text-align: center; }
 
 /* ── FOOTER ── */
+/* Mantuve tu color exacto #03A696 en el borde superior */
 .footer-section { background: var(--negro); color: var(--blanco); padding: 60px 10%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; border-top: 4px solid #03A696; }
-.footer-logo-img { max-height: 120px; } /* Logo grande en el footer */
+.footer-logo-img { max-height: 120px; } 
 .footer-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--dorado-claro); margin-bottom: 5px; }
 .footer-contact p { margin: 8px 0; font-size: 15px; color: #ccc; }
 
 /* ── WHATSAPP FLOTANTE ── */
 .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; width: 65px; height: 65px; display: flex; align-items: center; justify-content: center; z-index: 1000; }
 
-/* Responsive */
+/* ── RESPONSIVE (CELULAR FIX) ── */
 @media (max-width: 768px) {
-  .brand-logo { max-height: 70px; }
-  .nav-links { display: none; }
+  .brand-logo { max-height: 80px; }
   .about-section { flex-direction: column; text-align: center; padding: 60px 5%; }
   .about-img { width: 220px; height: 220px; }
+  
+  /* Arreglo exacto para que el gato no se vea desordenado */
   .case-card.active { flex-direction: column; }
-  .case-image-wrapper { width: 100%; height: 250px; }
-  .case-info { width: 100%; padding: 25px; }
+  .case-image-wrapper { width: 100%; height: 250px; display: block; }
+  .case-info { width: 100%; padding: 25px; display: flex; flex-direction: column; justify-content: center; }
+  
   .footer-section { flex-direction: column; text-align: center; }
 }
