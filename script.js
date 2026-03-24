@@ -46,3 +46,37 @@ document.addEventListener('DOMContentLoaded', () => {
     showSlide(currentIndex);
   });
 });
+/* ═══════════════════════════════════════════════
+   JarVet — Lógica del Contador de Promoción
+═══════════════════════════════════════════════ */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const timerElement = document.getElementById('timer');
+  
+  if (timerElement) {
+    // 15 minutos en segundos
+    let timeInSeconds = 15 * 60; 
+
+    function updateTimer() {
+      const minutes = Math.floor(timeInSeconds / 60);
+      let seconds = timeInSeconds % 60;
+
+      // Agrega un 0 a la izquierda si son menos de 10 segundos
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      
+      // Muestra el tiempo en la pantalla
+      timerElement.textContent = `${minutes}:${seconds}`;
+
+      if (timeInSeconds > 0) {
+        timeInSeconds--;
+      } else {
+        // Cuando llega a cero, se queda en 00:00 o podrías ocultarlo
+        timerElement.textContent = "00:00";
+      }
+    }
+
+    // Actualiza el contador cada segundo (1000 milisegundos)
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Llamada inicial para que no se vea vacío el primer segundo
+  }
+});

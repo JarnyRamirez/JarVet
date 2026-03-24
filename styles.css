@@ -144,3 +144,45 @@ button.shadow-effect:hover, a.shadow-effect:hover, .service-card.shadow-effect:h
   
   .footer-section { flex-direction: column; text-align: center; }
 }
+/* ── PROMOCIÓN FLOTANTE (CONTADOR) ── */
+.promo-float {
+  position: fixed;
+  bottom: 42px; /* Alineado al centro del botón de WhatsApp */
+  right: 110px; /* A la izquierda del botón de WhatsApp */
+  background-color: var(--dorado);
+  color: var(--negro);
+  padding: 8px 15px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 1000;
+  cursor: pointer;
+  animation: pulsePromo 2s infinite; /* Efecto de latido */
+}
+
+.promo-timer {
+  background: var(--negro);
+  color: var(--blanco);
+  padding: 4px 8px;
+  border-radius: 15px;
+  font-family: 'DM Sans', monospace;
+  font-size: 14px;
+}
+
+/* Animación de latido para llamar la atención */
+@keyframes pulsePromo {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+  50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* Ajuste para que en celulares no choque con el texto */
+@media (max-width: 768px) {
+  .promo-float {
+    bottom: 105px; /* Se pone arriba del botón de WhatsApp */
+    right: 25px;
+  }
+}
